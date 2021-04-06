@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
 if os.environ["PRODUCTION"] == "1":
     DEBUG = False
     SECURE_SSL_REDIRECT = True
-    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = False
     SESSION_COOKIE_SECURE = True
 else:
     DEBUG = True

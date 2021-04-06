@@ -95,4 +95,7 @@ heroku apps:destroy --app APPNAME
 # Logs
 heroku logs
 heroku logs -t
+
+# Deploy a branch
+git push heroku branch_name:master
 ```
