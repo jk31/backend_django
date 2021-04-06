@@ -48,8 +48,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
     'http://127.0.0.1:8080',
 ]
-# CSRF_TRUSTED_ORIGINS = ['*']
-# CSRF_COOKIE_DOMAIN = '*'
+CSRF_TRUSTED_ORIGINS = ['localhost']
+CSRF_COOKIE_DOMAIN = 'localhost'
 
 CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
 # need 'Authorization'? Token Authorization worked fine without it.
