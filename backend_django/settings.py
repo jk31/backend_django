@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
 if os.environ["PRODUCTION"] == "1":
     DEBUG = False
     SECURE_SSL_REDIRECT = True
-    CSRF_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
 else:
     DEBUG = True
@@ -48,6 +48,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
     'http://127.0.0.1:8080',
 ]
+CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
+
 CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
 # need 'Authorization'? Token Authorization worked fine without it.
 CORS_ALLOW_CREDENTIALS = True
