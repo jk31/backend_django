@@ -31,9 +31,6 @@
 * `EMAIL_HOST`
 * `EMAIL_USERNAME`
 * `EMAIL_PASSWORD`
-* `SECRET_KEY`
-* `SECRET_KEY`
-
 
 ## Development
 
@@ -61,3 +58,41 @@ Read [official deployment checklist](https://docs.djangoproject.com/en/3.1/howto
 - [ ] Change Email Backend in 
 - [ ] Secure cookies
 - [ ] Secure `SECRET_KEY` 
+- [ ] Setup environmental variables on the deployment server
+- [ ] Have correct migrations files for the database
+
+
+## [Heroku CLI Deployment](https://devcenter.heroku.com/articles/getting-started-with-python)
+
+* (Heroku CLI cheatsheet)[https://devhints.io/heroku]
+
+```bash
+# Login to heroku via CLI
+heroku login
+
+# Create empty app on heroku
+heroku create --region eu
+
+# Deploy code to heroku
+git push heroku main
+
+# Migrate database based on migration files
+heroku run python manage.py migrate
+
+# Creat admin account
+heroku run python manage.py createsuperuser
+```
+
+Useful heroku commands:
+
+```bash
+# List all apps
+heroku apps
+
+# Delete app
+heroku apps:destroy --app APPNAME
+
+# Logs
+heroku logs
+heroku logs -t
+```
